@@ -2,7 +2,7 @@ import { Client } from "pg";
 
 async function query(queryObject) {
   const ssl =
-    process.env.ENVIRONMENT !== "local"
+    process.env.NODE_ENV !== "development"
       ? {
           rejectUnauthorized: false,
           ca: process.env.POSTGRES_CA,
